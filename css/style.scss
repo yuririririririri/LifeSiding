@@ -58,6 +58,7 @@ img {
 
     @include m.tab {
         height: 80px;
+        padding: 0 15px;
     }
 
     img {
@@ -74,6 +75,10 @@ img {
         transition: all 0.5s;
         z-index: 99;
         opacity: 0;
+
+        @include m.tab {
+            font-size: 24px;
+        }
 
         li {
             margin-bottom: 15px;
@@ -94,6 +99,10 @@ img {
             &:hover {
                 opacity: 0.5;
             }
+        }
+
+        @include m.tab {
+            font-size: 20px;
         }
     }
 
@@ -174,7 +183,7 @@ img {
         }
 
         nav {
-            left: 80px;
+            left: 20px;
             opacity: 1;
         }
     }
@@ -190,8 +199,8 @@ img {
     }
 
     .text-box {
-        width: 700px;
-        height: 300px;
+        width: 550px;
+        height: 250px;
         position: absolute;
         right: 0;
         top: 50%;
@@ -203,8 +212,12 @@ img {
             height: 150px;
         }
 
+        @include m.sp {
+            width: 370px;
+        }
+
         .text1 {
-            font-size: 64px;
+            font-size: 54px;
             font-weight: bold;
             color: $re-brown;
             text-shadow: #535252 3px 4px 4px;
@@ -215,7 +228,7 @@ img {
         }
 
         .text2 {
-            font-size: 32px;
+            font-size: 25px;
             color: $red;
 
             @include m.tab {
@@ -243,13 +256,13 @@ img {
 
 .wrapper {
     text-align: center;
-    width: calc(100% - 30%);
+    width: calc(100% - 25%);
     margin: 0 auto;
 }
 
 .lead {
     font-size: 32px;
-    margin: 70px 0;
+    margin-bottom: 70px;
 
     @include m.tab {
         font-size: 20px;
@@ -275,6 +288,10 @@ img {
         color: $re-brown;
         transition: all 0.3s ease;
         position: relative;
+
+        @include m.tab {
+            width: 280px;
+        }
     }
 
     .about-btn span {
@@ -367,12 +384,15 @@ img {
         display: flex;
         justify-content: space-between;
         gap: 20px;
-        margin-bottom: 70px;
         position: relative;
 
         @include m.tab {
             flex-direction: column;
-            gap: 390px;
+            gap: 590px;
+        }
+
+        @include m.sp {
+            gap: 300px;
         }
 
         .slide {
@@ -421,14 +441,17 @@ img {
                 }
             }
         }
-
-        img {
-            width: 100%;
-        }
     }
 
     .works-btn {
-        padding-top: 400px;
+        padding-top: 450px;
+
+        @include m.tab {
+            padding-top: 650px;
+        }
+        @include m.sp {
+            padding-top: 350px;
+        }
 
         a {
             background-color: $re-brown;
@@ -452,20 +475,38 @@ img {
             align-items: center;
             gap: 60px;
             margin-bottom: 30px;
-            padding: 0 30px 0 8px;
+            padding: 0 30px 0 0;
 
             @include m.tab {
                 flex-direction: column;
+                padding: 0 20px 40px;
             }
 
             img {
-                flex: 0 0 280px;
+                flex: 0 0 282px;
                 height: 197px;
+
+                @include m.tab {
+                    width: 100%;
+                    flex: 0 0 525px;
+                }
+
+                @include m.sp {
+                    flex: 0 0 280px;
+                }
             }
 
             .service-description {
                 text-align: center;
                 padding: 20px 0;
+
+                @include m.tab {
+                    padding: none;
+                }
+
+                &.construction {
+                    width: 100%;
+                }
 
                 .de-text {
                     font-weight: bold;
@@ -490,26 +531,42 @@ img {
             align-items: center;
             padding: 10px 0;
 
+            @include m.tab {
+                flex-direction: column;
+            }
+
             .item-box {
                 flex-direction: column;
                 padding-right: 30px;
                 line-height: 1;
 
-                p {
-                    padding-top: 3px;
+                @include m.tab {
+                    padding: 0 0 30px 0;
+                }
+
+                .place {
+                    padding-top: 10px;
                 }
             }
 
             .item-text {
-                width: 420px;
-                height: 120px;
+                max-width: 420px;
+                width: 70%;
+                height: 110px;
                 color: $black;
                 border: 1px solid $black;
                 background-color: $white;
                 border-radius: 27px;
-                padding: 30px 38px;
+                padding: 20px 35px;
                 text-align: center;
                 position: relative;
+
+                @include m.tab {
+                    padding: 30px 30px;
+                }
+                @include m.sp {
+                    padding: 25px 10px;
+                }
 
                 &::before {
                     content: "";
@@ -517,7 +574,21 @@ img {
                     border: 15px solid transparent;
                     border-right: 15px solid #F2F2EE;
                     left: -27px;
-                    bottom: 45px;
+                    bottom: 40px;
+
+                    @include m.tab {
+                        border: 15px solid transparent;
+                        border-bottom: 15px solid #F2F2EE;
+                        bottom: 105px;
+                        left: 165px;
+                    }
+
+                    @include m.sp {
+                        border: 15px solid transparent;
+                        border-bottom: 15px solid #F2F2EE;
+                        bottom: 105px;
+                        left: 105px;
+                    }
                 }
             }
         }
@@ -527,8 +598,10 @@ img {
         padding: 70px 0 0;
 
         a {
+            font-size: 18px;
             margin: 0 auto;
-            width: 500px;
+            max-width: 500px;
+            width: 100%;
             padding: 15px 0;
             background-color: $re-brown;
             border: 1px solid $re-brown;
@@ -537,13 +610,15 @@ img {
             box-sizing: border-box;
             display: flex;
             justify-content: center;
+            align-items: center;
+            white-space: nowrap;
 
             .prev {
                 background-image: url(../img/tel-icon.png);
                 background-size: cover;
                 background-position: center;
-                width: 35px;
-                height: 35px;
+                width: 25px;
+                height: 25px;
                 display: inline-block;
             }
 
@@ -558,18 +633,17 @@ img {
                 .after {
                     display: block;
                     background-image: url(../img/tel-re-brown.png);
-                    width: 35px;
-                    height: 35px;
+                    background-size: cover;
+                    background-position: center;
+                    width: 25px;
+                    height: 25px;
                     display: inline-block;
-
                 }
             }
-        @include m.tab {
-            width: 350px;
-        } 
         }
     }
 }
+
 
 #footer {
     background-color: $green;
@@ -591,6 +665,7 @@ img {
             display: flex;
             justify-content: space-between;
             gap: 30px;
+            padding-bottom: 20px;
 
             @include m.tab {
                 flex-direction: column;
@@ -615,6 +690,7 @@ img {
         padding: 10px 0;
     }
 }
+
 
 // //aboutページ//
 .a-mainvisual {
@@ -670,13 +746,18 @@ img {
 }
 
 .about-lead2 {
-    font-size: 20px;
+    font-size: 23px;
     margin: 20px 0;
+
+    @include m.tab {
+        font-size: 20px;
+    }
 }
 
 .about-content {
     color: $re-brown;
     font-size: 26px;
+    padding-top: 80px;
 }
 
 .business_detail {
@@ -690,6 +771,16 @@ img {
 }
 
 .company_overview {
+
+    .inner {
+        width: 70%;
+        margin: 0 auto;
+
+        @include m.tab {
+            width: 90%;
+        }
+    }
+
     .overview {
         width: 100%;
         text-align: left;
@@ -713,6 +804,7 @@ img {
         border-bottom: 1px solid $black;
     }
 }
+
 
 //worksページ//
 
@@ -763,6 +855,14 @@ img {
                 z-index: 97;
                 color: $se-white;
                 font-family: "Croissant One", serif;
+            }
+
+            &.w-text {
+                color: $pastel-green;
+
+                &::after {
+                    box-shadow: none;
+                }
             }
         }
     }
